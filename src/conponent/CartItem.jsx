@@ -1,7 +1,7 @@
 import { Box, Button, Card , CardContent, CardMedia , ImageListItem, Typography } from '@mui/material'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrease, increase, remove } from '../features/Cart/CartSlice'
+import { decrease, increase, remove } from '../features/Cart/cartSlice'
 
 
 const CartItem = ({item}) => {
