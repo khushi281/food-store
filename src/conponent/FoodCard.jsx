@@ -11,7 +11,7 @@ import Aos from 'aos'
 import "aos/dist/aos.css"
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { add } from '../features/Cart/CartSlice';
+import { add } from '../features/Cart/cartSlice';
 
 const FoodCard = ({item}) => {
 
