@@ -1,14 +1,20 @@
 import { Box, Button, Card , CardContent, CardMedia , ImageListItem, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrease, increase, remove } from '../features/Cart/cartSlice'
+import { decrease, increase, remove, resets } from '../features/Cart/cartSlice'
+import { Navigate, useNavigate } from 'react-router-dom'
+
 
 
 const CartItem = ({item}) => {
 
 
     const {cartItem} = useSelector(state => state.cart)
+    const {user} = useSelector(state => state.auth)
+   
+   
     const dispatch = useDispatch()
+
 
 
     const handleIncrease =() => {
@@ -30,6 +36,8 @@ const CartItem = ({item}) => {
     // } , 0)
     const ii = item.price*item.qty
     
+ 
+
   return (
    <>
    <Card  sx={{display:"flex" , minheight:"320px" , borderRadius:"20px" , marginLeft:"30px" , marginTop:"40px" , minWidth:"100%"  }}>

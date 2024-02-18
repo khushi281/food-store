@@ -7,7 +7,13 @@ const cartSlice = createSlice({
         cartItem:[]
     },
     reducers:{
-
+     
+        resets:(state) => {
+         return{
+            
+            cartItem:[]
+         }
+        },
         // Add to cart
 
         add:(state , action) => {
@@ -47,5 +53,5 @@ const cartSlice = createSlice({
     }
 })
 
-export const {add , increase , decrease , remove} = cartSlice.actions
+export const {add , increase , decrease , remove , resets } = cartSlice.actions
 export default cartSlice.reducer

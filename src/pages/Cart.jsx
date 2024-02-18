@@ -1,7 +1,9 @@
 import { Box, Grid,  Card , CardContent , Typography , Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import CartItem from '../conponent/CartItem'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navigate, useNavigate } from 'react-router-dom'
+
 // import FoodContext from '../context/Foodcontext'
 
 const Cart = () => {
@@ -9,10 +11,12 @@ const Cart = () => {
   // const {cartItem} = useContext(FoodContext)
 
   const {cartItem} = useSelector(state => state.cart)
+  const {user} = useSelector(state => state.auth)
+  const navigate = useNavigate()
+ 
+  const dispatch = useDispatch()
 
-  // const total = cartItem.reduce((p ,c) => {
-  //   return p + c.price 
-  // },0)
+ 
   const total = cartItem.reduce((p, c) => {
     return p + c.price * c.qty;
   }, 0);
@@ -21,6 +25,12 @@ const Cart = () => {
 
   const final = total + gst
 
+  useEffect(() => {
+    if(!user){
+      navigate("/login")
+    }
+   
+  } ,[user])
 
 
   if(cartItem.length === 0){

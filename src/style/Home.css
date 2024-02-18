@@ -63,6 +63,7 @@ button:hover{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        padding-top: 20px;
     }
     .first{
         width: 100%;

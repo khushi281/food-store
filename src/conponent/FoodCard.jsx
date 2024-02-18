@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -12,31 +12,40 @@ import "aos/dist/aos.css"
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../features/Cart/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 const FoodCard = ({item}) => {
 
   const dispatch = useDispatch()
 
   const {cartItem} = useSelector(state => state.cart)
+  const navigate = useNavigate()
+  const {user} = useSelector(state => state.auth)
 
   const [buttonDisable, setButtonDisable] = useState(false);
 
 
   const getFood = () => {
-    toast.success("Add TO Cart Success",{
-      position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "dark",
-      })
-    dispatch(add(item))
-    setButtonDisable(true)
+    if(!user){
+      navigate("/login")
+    }else{
+      toast.success("Add TO Cart Success",{
+        position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+        })
+      dispatch(add(item))
+      setButtonDisable(true)
+
+    }
 
   }
+
 
   return (
    <>
@@ -61,9 +70,7 @@ const FoodCard = ({item}) => {
        Add TO Cart </Button>
    
     </CardContent>
-    {/* <CardActions>
-        <Button sx={{bgcolor:"green" , width:"150px" , height:"40px" , color:"white" , marginLeft:"70px" , borderRadius:"20px"}} size="small">Add To Cart</Button>
-      </CardActions> */}
+   
    </Card>
    </div>
    </Box>

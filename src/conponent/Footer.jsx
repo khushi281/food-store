@@ -63,8 +63,8 @@ const Footer = () => {
      <Grid item lg={4} sm={4} xs={12}>
         <Typography variant='h3' sx={{marginTop:"20px"}}>Conatct Us</Typography>
          <Typography variant='h6' sx={{marginTop:"30px"}}> <LocationOnIcon  sx={{color:"green" , fontSize:"30px"}}/> 57 Main Street, 2nd Block 3rd Floor,Indore</Typography>
-         <Typography variant='h6' sx={{ marginTop:"20px"}}><EmailIcon sx={{color:"green" , fontSize:"30px"}}/>   freshtohome@gmail.com</Typography>
-        <Typography variant='h6' sx={{ marginTop:"20px"}}><CallIcon sx={{color:"green" , fontSize:"30px"}}/>  +919234567893</Typography>
+         <Typography variant='h6' sx={{ marginTop:"20px"}}><EmailIcon sx={{color:"green" , fontSize:"30px"}}/>   freshtohome@gmail.com , fth@gmail.com</Typography>
+        <Typography variant='h6' sx={{ marginTop:"20px"}}><CallIcon sx={{color:"green" , fontSize:"30px"}}/>    919234567893 , 919987654321</Typography>
 
      </Grid>
     </Grid>

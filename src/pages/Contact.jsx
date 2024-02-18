@@ -73,11 +73,11 @@ const Contact = () => {
        
        <Grid conatiner spacing={1}>
         <Grid item lg={12} sm={12} xs={12} sx={{paddingTop:"20px"}}>
-          <TextField variant = "outlined"  label="Full Name" fullWidth>
+          <TextField  variant = "outlined" type='text' label='Full Name' fullWidth >
           </TextField>
         </Grid>
         <Grid item lg={12} sx={{my:"10px"}}>
-          <TextField variant = "outlined"  type='number' label="Phone" fullWidth>
+          <TextField  variant = "outlined"  type='number' label="Phone" fullWidth >
           </TextField>
         </Grid>
 
@@ -87,11 +87,11 @@ const Contact = () => {
         </Grid>
         <Grid item lg={12} sx={{my:"10px"}}>
           <TextField id="outlined-multiline-static" variant = "outlined" type='text' fullWidth label="Message" multiline
-          rows={4}>
+          rows={4} >
           </TextField>
         </Grid>
 
-        <Button variant="outlined" sx={{marginLeft:"160px" , marginTop:"20px"}}> Send Message</Button>
+        <Button type='submit' variant="outlined" sx={{marginLeft:"160px" , marginTop:"20px"}}> Send Message</Button>
        </Grid>
       
        </CardContent>
